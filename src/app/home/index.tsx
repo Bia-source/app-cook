@@ -1,6 +1,6 @@
 
 import * as style from "./style"
-import Ingredients from "@/components/ingredients"
+import Ingredients from "@/components/Ingredients"
 
 export default function Home() {
     return (

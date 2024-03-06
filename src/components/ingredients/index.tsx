@@ -1,5 +1,5 @@
 import * as style from "./style";
-import Ingredient from "../ingredient";
+import Ingredient from "../Ingredient";
 import { useState } from "react";
 
 export default function Ingredients() {

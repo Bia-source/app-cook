@@ -1,6 +1,6 @@
-import * as style from "./style";
-import icon from "../../../assets/icons/apple.png";
 import { TouchableOpacityProps } from "react-native";
+import icon from "../../../assets/icons/apple.png";
+import * as style from "./style"
 
 export type IngredientsProps = {
     name: string;
