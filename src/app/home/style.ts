@@ -1,10 +1,6 @@
 import { theme } from "@/theme";
 import styled, {css} from "styled-components/native";
 
-export type TypeTitleBold = {
-  bold?: boolean
-}
-
 export const Container = styled.View`
   flex:1;
   padding: 24px;
@@ -30,6 +26,6 @@ export const Message = styled.Text`
     font-size: ${theme.fonts.size.body.md}px;
     font-family: ${theme.fonts.family.regular};
     margin-top: 12px;
-    margin-bottom: 3px;
+    margin-bottom: 30px;
     color: ${theme.colors.gray_400};
 `
