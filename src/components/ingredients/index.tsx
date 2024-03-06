@@ -3,10 +3,9 @@ import Ingredient from "../Ingredient";
 import { useState } from "react";
 import { Selected } from "../Selected/index";
 import { Alert } from "react-native";
-import { FadeAnimation } from "../FadeAnimation";
 
 export default function Ingredients() {
-    const [selected, setSelected] = useState<string[]>([])
+    const [selected, setSelected] = useState<string[]>([]);
 
     function handleToggleSelected(value: string) {
         if (selected.includes(value)) {
@@ -41,11 +40,7 @@ export default function Ingredients() {
             </style.ContainerScroll>
             {
                 selected.length > 0 && (
-                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }} />
-
-                    // <FadeAnimation direction="fade-in-x">
-                    //     <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }} />
-                    // </FadeAnimation>
+                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }} inOrOut={true}/>
                 )}
         </style.Container>
 

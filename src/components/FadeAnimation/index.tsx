@@ -5,7 +5,7 @@ import { useWindowDimensions } from "react-native";
 import { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 import { Text } from "react-native";
 
-type DirectionType = "fade-out-x" | "fade-in-x" | "fade-out-y" | "fade-in-y";
+export type DirectionType = "fade-out-x" | "fade-in-x" | "fade-out-y" | "fade-in-y";
 type FadeAnimationProps = ViewProps & {
    children: React.ReactNode;
    direction: DirectionType

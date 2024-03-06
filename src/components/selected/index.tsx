@@ -2,7 +2,8 @@ import { theme } from "@/theme";
 import { MaterialIcons } from "@expo/vector-icons";
 import Animated from "react-native-reanimated";
 import * as style from "./style";
-import { FadeAnimation } from "../FadeAnimation";
+import { DirectionType, FadeAnimation } from "../FadeAnimation";
+import { useEffect, useState } from "react";
 
 
 type Props = {
