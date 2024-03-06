@@ -3,7 +3,9 @@ import styled from "styled-components/native";
 export const Container = styled.View``;
 export const ContainerScroll = styled.ScrollView.attrs(()=> ({
    showsVerticalScrollIndicator: false
-}))``;
+}))`
+  height: 75%;
+`;
 
 export const SubContainer = styled.View`
    flex-wrap: wrap;

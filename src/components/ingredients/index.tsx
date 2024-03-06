@@ -26,7 +26,7 @@ export default function Ingredients() {
         <style.Container>
             <style.ContainerScroll>
                 <style.SubContainer>
-                    {Array.from({ length: 3 }).map((item, index) => (
+                    {Array.from({ length: 100 }).map((item, index) => (
                         <Ingredient
                             key={index}
                             name="maca"
@@ -38,9 +38,10 @@ export default function Ingredients() {
 
                 </style.SubContainer>
             </style.ContainerScroll>
+           
             {
                 selected.length > 0 && (
-                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }} inOrOut={true}/>
+                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }}/>
                 )}
         </style.Container>
 
