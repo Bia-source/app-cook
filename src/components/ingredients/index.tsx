@@ -1,8 +1,9 @@
 import * as style from "./style";
 import Ingredient from "../Ingredient";
 import { useState } from "react";
-import { Selected } from "../selected/index";
+import { Selected } from "../Selected/index";
 import { Alert } from "react-native";
+import { FadeAnimation } from "../FadeAnimation";
 
 export default function Ingredients() {
     const [selected, setSelected] = useState<string[]>([])
@@ -15,10 +16,10 @@ export default function Ingredients() {
         console.log(selected);
     }
 
-    function handleClearSelected(){
+    function handleClearSelected() {
         Alert.alert("Limpar", "Deseja limpar tudo?", [
-            { text: "Não", style: "cancel"},
-            { text: "Sim", onPress: ()=> setSelected([])}
+            { text: "Não", style: "cancel" },
+            { text: "Sim", onPress: () => setSelected([]) }
         ])
     }
 
@@ -26,7 +27,7 @@ export default function Ingredients() {
         <style.Container>
             <style.ContainerScroll>
                 <style.SubContainer>
-                    {Array.from({ length: 100 }).map((item, index) => (
+                    {Array.from({ length: 3 }).map((item, index) => (
                         <Ingredient
                             key={index}
                             name="maca"
@@ -40,10 +41,12 @@ export default function Ingredients() {
             </style.ContainerScroll>
             {
                 selected.length > 0 && (
-                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={()=> {}}/>
-                )
-            }
+                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }} />
 
+                    // <FadeAnimation direction="fade-in-x">
+                    //     <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }} />
+                    // </FadeAnimation>
+                )}
         </style.Container>
 
     )
