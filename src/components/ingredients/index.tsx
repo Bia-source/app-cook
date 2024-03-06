@@ -1,6 +1,8 @@
 import * as style from "./style";
 import Ingredient from "../Ingredient";
 import { useState } from "react";
+import { Selected } from "../selected/index";
+import { Alert } from "react-native";
 
 export default function Ingredients() {
     const [selected, setSelected] = useState<string[]>([])
@@ -13,20 +15,36 @@ export default function Ingredients() {
         console.log(selected);
     }
 
+    function handleClearSelected(){
+        Alert.alert("Limpar", "Deseja limpar tudo?", [
+            { text: "Não", style: "cancel"},
+            { text: "Sim", onPress: ()=> setSelected([])}
+        ])
+    }
+
     return (
         <style.Container>
-            <style.SubContainer>
-                {Array.from({ length: 100 }).map((item, index) => (
-                    <Ingredient
-                        key={index}
-                        name="maca"
-                        image="./icon.png"
-                        selected={selected.includes(String(index))}
-                        onPress={() => handleToggleSelected(String(index))}
-                    />
-                ))}
+            <style.ContainerScroll>
+                <style.SubContainer>
+                    {Array.from({ length: 100 }).map((item, index) => (
+                        <Ingredient
+                            key={index}
+                            name="maca"
+                            image="./icon.png"
+                            selected={selected.includes(String(index))}
+                            onPress={() => handleToggleSelected(String(index))}
+                        />
+                    ))}
 
-            </style.SubContainer>
+                </style.SubContainer>
+            </style.ContainerScroll>
+            {
+                selected.length > 0 && (
+                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={()=> {}}/>
+                )
+            }
+
         </style.Container>
+
     )
 }

@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 
-export const Container = styled.ScrollView.attrs(()=> ({
+export const Container = styled.View``;
+export const ContainerScroll = styled.ScrollView.attrs(()=> ({
    showsVerticalScrollIndicator: false
 }))``;
 
