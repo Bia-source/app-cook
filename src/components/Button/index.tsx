@@ -9,7 +9,7 @@ type Props = TouchableOpacityProps & {
 
 export function Button({title, opacity, ...rest}: Props){
     return (
-        <style.Container opacityNumber={0.7} {...rest}>
+        <style.Container opacityNumber={opacity} {...rest}>
             <style.TitleButton>{title}</style.TitleButton>
         </style.Container>
     )
