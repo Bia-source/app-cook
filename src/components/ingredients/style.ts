@@ -1,7 +1,8 @@
-import { theme } from "@/theme";
 import styled from "styled-components/native";
 
-export const Container = styled.ScrollView``;
+export const Container = styled.ScrollView.attrs(()=> ({
+   showsVerticalScrollIndicator: false
+}))``;
 
 export const SubContainer = styled.View`
    flex-wrap: wrap;
@@ -9,5 +10,7 @@ export const SubContainer = styled.View`
    padding-bottom: 200px;
    gap: 12px;
 `;
+
+
 
 

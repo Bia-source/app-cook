@@ -1,11 +1,18 @@
 import * as style from "./style";
-import icon from "./icon.png";
+import icon from "../../../assets/icons/apple.png";
+import { TouchableOpacityProps } from "react-native";
 
-export default function Ingredient(){
+export type IngredientsProps = {
+    name: string;
+    image: string;
+    selected?: boolean;
+}
+
+export default function Ingredient({name, image, selected = false, ...rest}: IngredientsProps & TouchableOpacityProps){
     return (
-       <style.Container>
+       <style.Container {...rest} selected={selected}>
         <style.ImgButton source={icon}/>
-        <style.TextButton> Maca</style.TextButton>
+        <style.TextButton> Maca </style.TextButton>
        </style.Container> 
     )
 }
