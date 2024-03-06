@@ -3,6 +3,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import Animated, { SlideInDown, BounceOut } from "react-native-reanimated";
 import * as style from "./style";
 import { styleSheet } from "./style"
+import { Button } from "../Button";
 
 
 type Props = {
@@ -26,6 +27,7 @@ export function Selected({ quantity, onClear, onSearch }: Props) {
                     color={theme.colors.gray_400}
                 />
             </style.Header>
+            <Button  title="Econtrar" onPress={onSearch} opacity={1}/>
         </Animated.View>
 
     )
