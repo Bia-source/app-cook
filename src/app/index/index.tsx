@@ -1,8 +1,6 @@
 
-import { Button } from "@/components/Button"
 import * as style from "./style"
 import Ingredients from "@/components/Ingredients"
-import { Loading } from "@/components/Loading"
 
 export default function Home() {
     return (

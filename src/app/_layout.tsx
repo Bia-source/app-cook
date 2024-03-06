@@ -2,7 +2,8 @@ import * as React from 'react';
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "@/theme"
 import { useFonts, Poppins_400Regular, Poppins_700Bold, Poppins_500Medium } from "@expo-google-fonts/poppins";
-import Home from "./home";
+import Home from "./_layout";
+import { Slot } from 'expo-router';
 
 
 export default function Page() {
@@ -10,7 +11,7 @@ export default function Page() {
 
   return (
     <ThemeProvider theme={theme}>
-                {fontLoaded ? <Home/> : <></>}
+                {fontLoaded ? <Slot/> : <></>}
     </ThemeProvider>
   );
 }

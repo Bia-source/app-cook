@@ -3,6 +3,7 @@ import Ingredient from "../Ingredient";
 import { useState } from "react";
 import { Selected } from "../Selected/index";
 import { Alert } from "react-native";
+import { router } from "expo-router";
 
 export default function Ingredients() {
     const [selected, setSelected] = useState<string[]>([]);
@@ -20,6 +21,10 @@ export default function Ingredients() {
             { text: "Não", style: "cancel" },
             { text: "Sim", onPress: () => setSelected([]) }
         ])
+    }
+
+    function handleSearch(){
+       router.navigate("/recipes/");
     }
 
     return (
@@ -41,7 +46,7 @@ export default function Ingredients() {
            
             {
                 selected.length > 0 && (
-                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={() => { }}/>
+                    <Selected quantity={selected.length} onClear={handleClearSelected} onSearch={handleSearch}/>
                 )}
         </style.Container>
 
