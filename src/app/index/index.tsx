@@ -5,7 +5,7 @@ import Ingredients from "@/components/Ingredients"
 import { services } from "@/services";
 
 export default function Home() {
-   const [ingredients, setIngredients] = useState<IngredientResponse[] >([]);
+   const [ingredients, setIngredients] = useState<IngredientResponse[]>([]);
 
    useEffect(()=> {
       services.ingredients.findAll().then(setIngredients)

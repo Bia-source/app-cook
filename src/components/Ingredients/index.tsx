@@ -18,7 +18,6 @@ export default function Ingredients({ingredients}: Props) {
             return setSelected((state) => state.filter((item) => item !== value));
         }
         setSelected((state) => [...state, value]);
-        console.log(selected);
     }
 
     function handleClearSelected() {

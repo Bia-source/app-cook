@@ -1,12 +1,8 @@
 import { theme } from "@/theme";
 import styled from "styled-components/native";
 
-export type PropsStyleButton = {
-    opacityNumber: number;
-}
 
-export const Container = styled.TouchableOpacity<PropsStyleButton>`
-   opacity: ${({ opacityNumber }) => opacityNumber ? opacityNumber : 1};
+export const Container = styled.TouchableOpacity`
    height: 48px;
    width: 100%;
    background-color: ${theme.colors.green_600};

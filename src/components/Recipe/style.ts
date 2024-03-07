@@ -2,13 +2,10 @@ import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient"
 import { theme } from "@/theme";
 
-type PropsStyleRecipe = {
-    opacity: number;
-}
-
-export const Container = styled.TouchableOpacity<PropsStyleRecipe>`
-   opacity: ${({ opacity })=> opacity ? opacity : 1}px;
+export const Container = styled.TouchableOpacity`
    height: 192px;
+   width: 95%;
+   align-self: center;
    border-radius: ${theme.borderRadius.lg}px;
    overflow: hidden;
 `

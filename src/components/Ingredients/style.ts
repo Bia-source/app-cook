@@ -4,7 +4,7 @@ export const Container = styled.View``;
 export const ContainerScroll = styled.ScrollView.attrs(()=> ({
    showsVerticalScrollIndicator: false
 }))`
-  height: 75%;
+  
 `;
 
 export const SubContainer = styled.View`

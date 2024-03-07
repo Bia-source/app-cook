@@ -27,7 +27,7 @@ export function Selected({ quantity, onClear, onSearch }: Props) {
                     color={theme.colors.gray_400}
                 />
             </style.Header>
-            <Button  title="Econtrar" onPress={onSearch} opacity={1}/>
+            <Button  title="Econtrar" onPress={onSearch}/>
         </Animated.View>
 
     )

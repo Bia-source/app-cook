@@ -15,8 +15,9 @@ export const styleSheet = StyleSheet.create({
         padding: 24,
         borderRadius: theme.borderRadius.lg,
         position: "absolute",
-        bottom: 24,
+        bottom: 72,
         width: "100%",
+        height: "20%",
         alignSelf: "center",
     }
 })

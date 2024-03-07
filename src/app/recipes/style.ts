@@ -11,6 +11,11 @@ export const Header = styled.View`
   margin-bottom: 12px;
 `;
 
+export const Main = styled.View`
+  flex-direction: column;
+  gap: -180px;
+`
+
 export const Title = styled.Text`
  color: ${theme.colors.black};
  font-size: ${theme.fonts.size.heading.md}px;
