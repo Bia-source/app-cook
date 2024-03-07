@@ -1,11 +1,16 @@
 import * as style from "./style";
-import Ingredient from "../Ingredient";
+import Ingredient, { IngredientsProps } from "../Ingredient";
 import { useState } from "react";
 import { Selected } from "../Selected/index";
 import { Alert } from "react-native";
 import { router } from "expo-router";
+import { services } from "@/services";
 
-export default function Ingredients() {
+type Props ={
+    ingredients: IngredientResponse[];
+}
+
+export default function Ingredients({ingredients}: Props) {
     const [selected, setSelected] = useState<string[]>([]);
 
     function handleToggleSelected(value: string) {
@@ -31,13 +36,13 @@ export default function Ingredients() {
         <style.Container>
             <style.ContainerScroll>
                 <style.SubContainer>
-                    {Array.from({ length: 100 }).map((item, index) => (
+                    {ingredients.map((item, index) => (
                         <Ingredient
-                            key={index}
-                            name="maca"
-                            image="./icon.png"
-                            selected={selected.includes(String(index))}
-                            onPress={() => handleToggleSelected(String(index))}
+                            key={item.id}
+                            name={item.name}
+                            image={`${services.storage.imagePath}/${item.image}`}
+                            selected={selected.includes(item.id)}
+                            onPress={() => handleToggleSelected(item.id)}
                         />
                     ))}
 

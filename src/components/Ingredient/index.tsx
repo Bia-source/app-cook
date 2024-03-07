@@ -11,8 +11,8 @@ export type IngredientsProps = {
 export default function Ingredient({name, image, selected = false, ...rest}: IngredientsProps & TouchableOpacityProps){
     return (
        <style.Container {...rest} selected={selected}>
-        <style.ImgButton source={icon}/>
-        <style.TextButton> Maca </style.TextButton>
+        <style.ImgButton source={{ uri: image}}/>
+        <style.TextButton> {name} </style.TextButton>
        </style.Container> 
     )
 }

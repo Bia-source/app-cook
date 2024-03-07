@@ -9,7 +9,7 @@ type PropsStyleRecipe = {
 export const Container = styled.TouchableOpacity<PropsStyleRecipe>`
    opacity: ${({ opacity })=> opacity ? opacity : 1}px;
    height: 192px;
-   border-radius: ${theme.borderRadius.lg};
+   border-radius: ${theme.borderRadius.lg}px;
    overflow: hidden;
 `
 
@@ -19,13 +19,13 @@ export const ImageBackground = styled.ImageBackground`
 
 export const Title = styled.Text`
   color: ${theme.colors.white};
-  font-size: ${theme.fonts.size.body.sm};
+  font-size: ${theme.fonts.size.body.sm}px;
   font-family: ${theme.fonts.family.bold};
 ` 
 
 export const Minute = styled.Text`
   color: ${theme.colors.yellow_500};
-  font-size: ${theme.fonts.size.body.xs};
+  font-size: ${theme.fonts.size.body.xs}px;
   font-family: ${theme.fonts.family.regular};
 ` 
 
