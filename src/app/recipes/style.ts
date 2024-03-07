@@ -14,6 +14,7 @@ export const Header = styled.View`
 export const Main = styled.View`
   flex-direction: column;
   gap: -180px;
+  padding: 0px 10px;
 `
 
 export const Title = styled.Text`

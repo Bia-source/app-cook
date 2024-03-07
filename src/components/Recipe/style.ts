@@ -4,7 +4,6 @@ import { theme } from "@/theme";
 
 export const Container = styled.TouchableOpacity`
    height: 192px;
-   width: 95%;
    align-self: center;
    border-radius: ${theme.borderRadius.lg}px;
    overflow: hidden;

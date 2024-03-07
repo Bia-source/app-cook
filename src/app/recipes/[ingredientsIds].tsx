@@ -4,8 +4,9 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { FlatList } from "react-native";
 import { Recipe } from "@/components/Recipe";
 import { services } from "@/services";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Ingredients from "@/components/Ingredients";
+import { VSeparator } from "@/components/Separator"
 
 
 export default function Recipes() {
@@ -16,6 +17,9 @@ export default function Recipes() {
 
     useEffect(() => {
         services.ingredients.findByIds(ingredientsIds).then(setIngredients);
+    }, [])
+
+    useEffect(() => {
         services.recipes.findByIngredientsIds(ingredientsIds).then(setRecipe);
     }, [])
 
@@ -38,9 +42,10 @@ export default function Recipes() {
                 <FlatList
                     data={recipes}
                     keyExtractor={item => item.id}
-                    renderItem={(recipe) => (
-                        <Recipe recipe={{ name: recipe.item.name, image: recipe.item.image, minutes: recipe.item.minutes }} />
-                    )}
+                    renderItem={({ item }) => <Recipe recipe={item} />}
+                    showsVerticalScrollIndicator={false}
+                    columnWrapperStyle={{ gap: 16 }}
+                    numColumns={2}
                 />
             </style.Main>
 
