@@ -1,6 +1,6 @@
 import { TouchableOpacityProps } from "react-native";
-import icon from "../../../assets/icons/apple.png";
 import * as style from "./style"
+import { services } from "@/services";
 
 export type IngredientsProps = {
     name: string;
@@ -11,7 +11,7 @@ export type IngredientsProps = {
 export default function Ingredient({name, image, selected = false, ...rest}: IngredientsProps & TouchableOpacityProps){
     return (
        <style.Container {...rest} selected={selected}>
-        <style.ImgButton source={{ uri: image}}/>
+        <style.ImgButton source={{ uri: `${services.storage.imagePath}/${image}`}}/>
         <style.TextButton> {name} </style.TextButton>
        </style.Container> 
     )

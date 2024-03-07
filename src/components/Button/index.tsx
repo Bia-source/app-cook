@@ -4,10 +4,10 @@ import * as style from "./style";
 
 type Props = TouchableOpacityProps & {
     title: string;
-    opacity: number;
+    opacity?: number;
 }
 
-export function Button({title, opacity, ...rest}: Props){
+export function Button({title, opacity = 0.7, ...rest}: Props){
     return (
         <style.Container opacityNumber={opacity} {...rest}>
             <style.TitleButton>{title}</style.TitleButton>
